@@ -32,7 +32,7 @@ class GameOptionRow(object):
 
     def __init__(self, window: pygame.Surface, option_label: str, x_pos: int, y_pos: int) -> None:
         self.window = window
-        self.option_label = option_label  # will be the exact key str belonging to the game option
+        self.option_label = option_label  # Will be the exact key str belonging to the game option.
         self.x_pos = x_pos
         self.y_pos = y_pos
         self.left_button_pos = (x_pos, y_pos)
@@ -40,7 +40,6 @@ class GameOptionRow(object):
         self.option_list = get_file_dict('game_options').get(self.option_label)
         self.set_option = get_file_dict('user_preferences').get(self.option_label)
         self.currently_selected_option = self.set_option
-        # self.current_option_index = self.option_list.index(self.currently_selected_option)  # index of the set option... find the index of set_option as it is in the option_list  # we may be able to replace a lot of the code in GameOptionsContent and GameOptionRow methods ...figure it out at some point
         self.left_button = CutoutArrowButton(self.window, self.left_button_pos, CUTOUT_ARROW_BUTTON_WIDTH,
                                              CUTOUT_ARROW_BUTTON_HEIGHT, 'left')
         self.right_button = CutoutArrowButton(self.window, self.right_button_pos, CUTOUT_ARROW_BUTTON_WIDTH,
@@ -174,12 +173,14 @@ class GameOptionsContent(object):
         for row_object in self.list_of_rows:
             if row_object.left_button_exists and row_object.left_button.is_hovering(mouse_pos):
                 row_object.left_button.draw_clicked(sfx_bool)
+                # (Maybe put this in game_option_row object as a method and then call it here).
                 row_object.currently_selected_option = \
-                    row_object.option_list[(row_object.option_list.index(row_object.currently_selected_option)) - 1]  # (Maybe put this in game_option_row object as a method and then call it here).
+                    row_object.option_list[(row_object.option_list.index(row_object.currently_selected_option)) - 1]
             elif row_object.right_button_exists and row_object.right_button.is_hovering(mouse_pos):
                 row_object.right_button.draw_clicked(sfx_bool)
+                # (Maybe put this in game_option_row object as a method and then call it here).
                 row_object.currently_selected_option = \
-                    row_object.option_list[(row_object.option_list.index(row_object.currently_selected_option)) + 1]  # (Maybe put this in game_option_row object as a method and then call it here).
+                    row_object.option_list[(row_object.option_list.index(row_object.currently_selected_option)) + 1]
             else:
                 pass
 
@@ -246,9 +247,9 @@ class GameOptionsScreen(object):
                     pygame.quit()
                     sys.exit()
 
-                # checks if mouse button was clicked
+                # Checks if mouse button was clicked.
                 elif event.type == pygame.MOUSEBUTTONUP:
-                    # checks if cursor was hovering over any buttons when clicked and if so, executes its code
+                    # Checks if cursor was hovering over any buttons when clicked and if so, executes its code.
 
                     if back_button.is_hovering(mouse_position):
                         back_button.draw_clicked(self.sfx_bool)
