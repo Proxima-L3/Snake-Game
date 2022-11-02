@@ -11,4 +11,3 @@
 2400, ripley
 700, proxima
 2100, finnmertins
-1600, proxima
