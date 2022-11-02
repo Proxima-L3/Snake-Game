@@ -270,7 +270,6 @@ class SnakeGame(object):
         any of the game border rects or any of the snake object's body cube
         rects. If it has, game end code is executed.
         """
-        # (alternative if statement...) if -1 in self.snake_player.head_cube_rect.collidelist(self.snake_player.snake_cube_rect_list):  # -1 is returned if nothing in the list collides with the head, otherwise a list of collisions is returned
         if list(filter(self.snake_player.head_cube_rect.colliderect,
                        (self.snake_player.snake_cube_rect_list[1:] + self.border_ui.border_image_rect_list))):
             self.snake_player.die()
