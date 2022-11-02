@@ -35,8 +35,7 @@ below.)
 - Post game screen with option to return to main menu or play again
 
 <h3>Game Demo</h3>
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/wnLGdalz9Tc/0.jpg)](http://www.youtube.com/watch?v=wnLGdalz9Tc 
-"Over-Engineered Snake Project using Python and Pygame (Demo)")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/wnLGdalz9Tc/0.jpg)](http://www.youtube.com/watch?v=wnLGdalz9Tc "Over-Engineered Snake Project using Python and Pygame (Demo)")
 
 <h2>Goals/purposes:</h2>
 Get more experience learning frameworks, learn how to use Pygame, create a game that actually has a gui, practice 
