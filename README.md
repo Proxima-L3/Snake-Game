@@ -1,25 +1,25 @@
 <h1 align='center'>Snake Game</h1>
 
 
-##Description:
+<h2>Description:</h2>
 A customized clone of the classic snake game.
 - *insert gif of snake game being played
 
-###Features included:
+<h3>Features included:</h3>
 - Multiple screens (splash screen, main menu, high scores screen, game options screen, snake game screen, pause menu, 
 game over screen, and post game screen)
 <p align="center">
-  <img src="screenshots_and_gifs/splash_screen.PNG" width="250" />
-  <img src="screenshots_and_gifs/main_menu_screen.PNG" width="250" /> 
-  <img src="screenshots_and_gifs/high_scores_screen.PNG" width="250" />
-  <img src="screenshots_and_gifs/game_options_screen.PNG" width="250" />
+  <img src="screenshots_and_gifs/splash_screen.PNG" width="225" />
+  <img src="screenshots_and_gifs/main_menu_screen.PNG" width="225" /> 
+  <img src="screenshots_and_gifs/high_scores_screen.PNG" width="225" />
+  <img src="screenshots_and_gifs/game_options_screen.PNG" width="225" />
 </p>
 
 <p align="center">
-  <img src="screenshots_and_gifs/snake_game_screen.PNG" width="250" />
-  <img src="screenshots_and_gifs/pause_menu_screen.PNG" width="250" /> 
-  <img src="screenshots_and_gifs/game_over_screen.PNG" width="250" />
-  <img src="screenshots_and_gifs/post_game_screen_scoreboard.PNG" width="250" />
+  <img src="screenshots_and_gifs/snake_game_screen.PNG" width="225" />
+  <img src="screenshots_and_gifs/pause_menu_screen.PNG" width="225" /> 
+  <img src="screenshots_and_gifs/game_over_screen.PNG" width="225" />
+  <img src="screenshots_and_gifs/post_game_screen_scoreboard.PNG" width="225" />
 </p>
 
 - Menu/game music and sfx
@@ -34,10 +34,11 @@ below.)
 - Game over screen with option to save score
 - Post game screen with option to return to main menu or play again
 
-###Game Demo
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/wnLGdalz9Tc/0.jpg)](http://www.youtube.com/watch?v=wnLGdalz9Tc "Over-Engineered Snake Project using Python and Pygame (Demo)")
+<h3>Game Demo</h3>
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/wnLGdalz9Tc/0.jpg)](http://www.youtube.com/watch?v=wnLGdalz9Tc 
+"Over-Engineered Snake Project using Python and Pygame (Demo)")
 
-##Goals/purposes:
+<h2>Goals/purposes:</h2>
 Get more experience learning frameworks, learn how to use Pygame, create a game that actually has a gui, practice 
 resourcefulness/learning "on the fly" (determine and find required information in order to implement a feature 
 instead of using videos and/or going through an entire online course before actually creating something), practice 
@@ -53,7 +54,7 @@ of positional and keyword arguments, get better at planning and organizing proje
 from the very beginning instead of after it was finished; silver lining: I definitely understand how useful and 
 necessary version control software is now).
 
-###Note:
+<h3>Note:</h3>
 
 - The project folder named "project_plans_scrum_files" holds "bricks_in_the_wall.txt". It started out as a file used 
 for breaking down abstract features into implementation steps and to also keep track of difficult challenges that I 
