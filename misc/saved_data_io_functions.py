@@ -166,11 +166,15 @@ def update_settings_real_time(bg_width: int, bg_height: int, old_user_prefs: dic
             pygame.mixer.music.play(-1)
         else:
             pass
-    elif old_music_setting != music_setting == 'True':  # If old music setting is false and new music setting is true, play music from start.
+    # If old music setting is false and new music setting is true, play music from start.
+    elif old_music_setting != music_setting == 'True':
         pygame.mixer.music.play(-1)
-    elif old_music_setting != music_setting == 'False':  # If old music setting is true and new music setting is false, stop music.
+    # If old music setting is true and new music setting is false, stop music.
+    elif old_music_setting != music_setting == 'False':
         pygame.mixer.music.stop()
-    else:  # If old and new music settings are both false or both true do nothing (this prevents the music from restarting or running the unnecessary stop music method if the setting wasn't changed).
+    # If old and new music settings are both false or both true do nothing (this prevents the music from restarting or
+    # running the unnecessary stop music method if the setting wasn't changed).
+    else:
         pass
 
     return sfx_bool, music_setting, background
