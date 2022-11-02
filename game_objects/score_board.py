@@ -26,8 +26,6 @@ class ScoreBoard(object):
         self.window = window
         self.user_score = user_score
         self.user_name = user_name
-        # self.board_bg = pygame.transform.scale(pygame.Surface.convert(pygame.image.load(os.path.join('project_assets', 'backgrounds', 'black_background.png'))), SCORE_BOARD_SIZE)
-        # self.bg_pos = (400, 250)
         self.score_name_list = get_score_name_list()
         self.user_row_page, self.user_row_index = get_page_of_user_row(self.score_name_list,
                                                                        self.user_score,
@@ -62,7 +60,6 @@ class ScoreBoard(object):
         those columns for the page that the user's
         (rank, score, name) data is on.
         """
-        # self.window.blit(self.board_bg, self.bg_pos)
         self.draw_labels()
         self.draw_data()
 
@@ -118,19 +115,25 @@ class ScoreBoard(object):
         user's row.
         """
         # Creates pos, surface, and rect lists for user row.
+        # (There are 3 items in each row and data_rect_list includes all items in all rows on screen,
+        # so we need to slice the list to just pull the items in our "user row").
         user_row_pos_list = [rect.center
-                             for rect in self.data_rect_list[(self.user_row_index*3):((self.user_row_index*3) + 3)]]  # (There are 3 items in each row and data_rect_list includes all items in all rows on screen, so we need to slice the list to just pull the items in our "user row").
+                             for rect in self.data_rect_list[(self.user_row_index*3):((self.user_row_index*3) + 3)]]
         user_row_surface_list = [self.data_font.render(str(item).upper(), True, GAME_COLOR_BLACK)
                                  for item in self.user_row_page[self.user_row_index]]
         user_row_rect_list = [surface.get_rect(center=pos)
                               for surface, pos in zip(user_row_surface_list, user_row_pos_list)]
 
         # Creates highlight rect for user row and positions it.
+        # (Algorithm for getting width and height arguments:
+        # width = right_border x_coord of name_rect (w/ 12 char limit)
+        #           - left_border x_coord of rank_rect + extra spacing
+        # height = height of rank rect + extra spacing)
         highlight_rect = pygame.Rect(0,
                                      0,
                                      ((680 - user_row_rect_list[0].left) + 20),
                                      (user_row_rect_list[0].height + 10),
-                                     )  # width = right_border x_coord of name_rect (w/ 12 char limit) - left_border x_coord of rank_rect + extra spacing ; height = height of rank rect + extra spacing
+                                     )
         highlight_rect.midleft = ((user_row_rect_list[0].left - 10), user_row_rect_list[0].centery - 1)
 
         return highlight_rect, user_row_surface_list, user_row_rect_list
