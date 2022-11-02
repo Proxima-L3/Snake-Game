@@ -9,6 +9,7 @@ FEATURE IDEAS
 - change the ArrowButton direction parameter to only allow 'left' or 'right' to be the input for direction
 - maybe get rid of / in open statements of file io functions (separate each directory item with commas)
 - replace manually done object "area" collision code (checking if mouse or screen item is in or out of a certain x and y range) with pygame builtin collide methods
+- abstract main menu screen button press events (they're all quite similar... maybe put them in a method)
 
 ...bugs/performance issues...
 - fix bug that causes game to crash when a certain number of snacks are eaten (crash lengths so far: 24, 38, 32, 33, 29, 35, 32, 33, 42, 36, ) ...no pattern as to what causes it to crash (things that seemed to help: making run loops 1/0 instead of True/False, maybe making the pygame.event.get call in the for loop statement itself instead of as a separate variable first, )
