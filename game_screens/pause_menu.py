@@ -65,7 +65,6 @@ class PauseMenu(object):
         continuously draws the four menu options and checks for arrow key down
         events in order to highlight currently "hovered" over option.
         """
-        # might have to track a start of pause time and an end of pause time then return a total pause time to add onto a total pause time attribute in the snake game screen and then in the blit timer section of the game screen take the current time and subtract the start time and the total pause time to display the timer consistently
         pygame.display.set_caption(self.caption)
         if self.sfx_bool == 'True':
             self.button_game_pause_sfx.play()
