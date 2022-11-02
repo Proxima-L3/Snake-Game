@@ -184,7 +184,7 @@ class ArrowButton(Button):
     def draw_clicked(self, sfx_bool: str) -> None:
         """Blit clicked button image to screen and play click sfx."""
         self.window.blit(self.arrow_image_clicked, self.arrow_rect)
-        pygame.display.update()  # do we need this here?
+        pygame.display.update()
         if sfx_bool == 'True':
             self.button_click_direction_sfx.play()
 
