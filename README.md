@@ -12,17 +12,17 @@ A customized clone of the classic snake game.
 - Multiple screens (splash screen, main menu, high scores screen, game options screen, snake game screen, pause menu, 
 game over screen, and post game screen)
 <p align="center">
-  <img src="screenshots_and_gifs/splash_screen.PNG" width="215" />
-  <img src="screenshots_and_gifs/main_menu_screen.PNG" width="215" /> 
-  <img src="screenshots_and_gifs/high_scores_screen.PNG" width="215" />
-  <img src="screenshots_and_gifs/game_options_screen.PNG" width="215" />
+  <img src="screenshots_and_gifs/splash_screen.PNG" width="200" />
+  <img src="screenshots_and_gifs/main_menu_screen.PNG" width="200" /> 
+  <img src="screenshots_and_gifs/high_scores_screen.PNG" width="200" />
+  <img src="screenshots_and_gifs/game_options_screen.PNG" width="200" />
 </p>
 
 <p align="center">
-  <img src="screenshots_and_gifs/snake_game_screen.PNG" width="215" />
-  <img src="screenshots_and_gifs/pause_menu_screen.PNG" width="215" /> 
-  <img src="screenshots_and_gifs/game_over_screen.PNG" width="215" />
-  <img src="screenshots_and_gifs/post_game_screen_scoreboard.PNG" width="215" />
+  <img src="screenshots_and_gifs/snake_game_screen.PNG" width="200" />
+  <img src="screenshots_and_gifs/pause_menu_screen.PNG" width="200" /> 
+  <img src="screenshots_and_gifs/game_over_screen.PNG" width="200" />
+  <img src="screenshots_and_gifs/post_game_screen_scoreboard.PNG" width="200" />
 </p>
 
 - Menu/game music and sfx
