@@ -2,10 +2,13 @@
 
 
 <h2>Description:</h2>
+
 A customized clone of the classic snake game.
 - *insert gif of snake game being played
 
+
 <h3>Features included:</h3>
+
 - Multiple screens (splash screen, main menu, high scores screen, game options screen, snake game screen, pause menu, 
 game over screen, and post game screen)
 <p align="center">
@@ -34,11 +37,13 @@ below.)
 - Game over screen with option to save score
 - Post game screen with option to return to main menu or play again
 
-<h3>Game Demo</h3>
+
+<h3>Game Demo:</h3>
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/wnLGdalz9Tc/0.jpg)](http://www.youtube.com/watch?v=wnLGdalz9Tc "Over-Engineered Snake Project using Python and Pygame (Demo)")
 
 <h2>Goals/purposes:</h2>
+
 Get more experience learning frameworks, learn how to use Pygame, create a game that actually has a gui, practice 
 resourcefulness/learning "on the fly" (determine and find required information in order to implement a feature 
 instead of using videos and/or going through an entire online course before actually creating something), practice 
@@ -53,6 +58,7 @@ of positional and keyword arguments, get better at planning and organizing proje
 (see note below), and practice using git/github (honestly should've connected this project to a repo 
 from the very beginning instead of after it was finished; silver lining: I definitely understand how useful and 
 necessary version control software is now).
+
 
 <h3>Note:</h3>
 
