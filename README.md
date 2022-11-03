@@ -4,13 +4,15 @@
 <h2>Description:</h2>
 
 A customized clone of the classic snake game.
-- *insert gif of snake game being played
+
+![](screenshots_and_gifs/snake_game_screen_playing_game_demonstration.gif)
 
 
 <h3>Features included:</h3>
 
 - Multiple screens (splash screen, main menu, high scores screen, game options screen, snake game screen, pause menu, 
 game over screen, and post game screen)
+
 <p align="center">
   <img src="screenshots_and_gifs/splash_screen.PNG" width="200" />
   <img src="screenshots_and_gifs/main_menu_screen.PNG" width="200" /> 
@@ -41,6 +43,7 @@ below.)
 <h3>Game Demo:</h3>
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/wnLGdalz9Tc/0.jpg)](http://www.youtube.com/watch?v=wnLGdalz9Tc "Over-Engineered Snake Project using Python and Pygame (Demo)")
+
 
 <h2>Goals/purposes:</h2>
 
