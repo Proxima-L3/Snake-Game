@@ -3,9 +3,11 @@
 
 <h2>Description:</h2>
 
-A customized clone of the classic snake game.
+An over-engineered customized clone of the classic snake game.
 
-![](screenshots_and_gifs/snake_game_screen_playing_game_demonstration.gif)
+<p align="center">
+<img src="screenshots_and_gifs/snake_game_screen_playing_game_demonstration.gif" />
+</p>
 
 
 <h3>Features included:</h3>
