@@ -47,20 +47,32 @@ below.)
 
 <h2>Goals/purposes:</h2>
 
-Get more experience learning frameworks, learn how to use Pygame, create a game that actually has a gui, practice 
-resourcefulness/learning "on the fly" (determine and find required information in order to implement a feature 
-instead of using videos and/or going through an entire online course before actually creating something), practice 
-using pep8 and improving the structure of my code, learn about event handling, practice using/creating modules/packages 
-in python, practice using classes and all their features to gain a better understanding of OOP and why you'd want to 
-use it in the first place (one of the main purposes of this project), exercise the practice of making readme files, 
-learn how to use file I/O reading/writing, learn how to use adobe xd to make mockups, learn about licensing and how to 
-find and use external assets, learn how to modify and create assets in adobe photoshop and illustrator, exercise the 
-practice of refactoring code, practice using type annotations, learn about docstring formats, use inline comments, use 
-inline conditionals, use list comprehensions, learn about and use map/filter and lambda expressions, gain understanding 
-of positional and keyword arguments, get better at planning and organizing projects via txt outlines and scrum 
-(see note below), and practice using git/github (honestly should've connected this project to a repo 
-from the very beginning instead of after it was finished; silver lining: I definitely understand how useful and 
-necessary version control software is now).
+- Get more experience learning frameworks.
+- Learn how to use Pygame.
+- Create a game that actually has a gui.
+- Practice resourcefulness/learning "on the fly" (determine and find required information in order to implement a 
+feature instead of using videos and/or going through an entire online course before actually creating something).
+- Practice using pep8 and improving the structure of my code
+- Learn about event handling.
+- Practice using/creating modules/packages in python.
+- Practice using classes and all their features to gain a better understanding of OOP and why you'd want to use it in 
+the first place (one of the main purposes of this project).
+- Exercise the practice of making readme files.
+- Learn how to use file I/O reading/writing.
+- Learn how to use adobe xd to make mockups.
+- Learn about licensing and how to find and use external assets.
+- Learn how to modify and create assets in adobe photoshop and illustrator.
+- Exercise the practice of refactoring code.
+- Practice using type annotations.
+- Learn about docstring formats.
+- Use inline comments.
+- Use inline conditionals.
+- Use list comprehensions.
+- Learn about and use map/filter and lambda expressions.
+- Gain understanding of positional and keyword arguments.
+- Get better at planning and organizing projects via txt outlines and scrum (see note below).
+- Practice using git/github (honestly should've connected this project to a repo from the very beginning instead of 
+after it was finished; silver lining: I definitely understand how useful and necessary version control software is now).
 
 
 <h3>Note:</h3>
