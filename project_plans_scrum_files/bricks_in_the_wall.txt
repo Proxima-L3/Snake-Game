@@ -125,8 +125,6 @@ CURRENT PROJECT OBSTACLES
         - while documenting, analyze all code comments throughout program and determine if they need editing or should simply be removed (also decide if inline comments are necessary)
     - get rid of magic numbers/variables (put them in constants in constants module)
     - organize constants module (also add further description to module docstring)
-
-(WIP)
 - finish making the readme file (maybe look up standard practice when it comes to readme files...)
     - create outline on paper
     - type out structure and text content in readme md
@@ -137,10 +135,12 @@ CURRENT PROJECT OBSTACLES
         - add screenshots/recordings
             - create sample run "game demo" plan/outline
             - look up how to create recordings and gifs for md
-            - record everything and make screenshots
+            - record everything and make screenshots/gifs
             - format it all into readme file
         - explain scrum files and wip-loc
 - review git/github and figure out what needs to happen to properly upload project to github, etc
+
+(WIP)
 - _wip-loc_
 
 (backlog)
