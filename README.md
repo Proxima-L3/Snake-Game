@@ -33,9 +33,7 @@ game over screen, and post game screen)
 - Custom made reusable responsive buttons and text input boxes
 - Dynamic and organized high scores screen/board
 - Dynamic game settings screen w/ options utilizing various game assets (note: asset source/credit information can be 
-found in its folder's asset_sources.txt doc, present in each folder of the project_assets directory - see example 
-below.)
-- *insert gif showing how project_assets is organized
+found in its folder's asset_sources.txt doc, present in each folder of the project_assets directory.)
 - Full-fledged snake game with border ui, pregame rules board, and pause menu
 
 <p align="center">
