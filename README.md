@@ -37,7 +37,11 @@ found in its folder's asset_sources.txt doc, present in each folder of the proje
 below.)
 - *insert gif showing how project_assets is organized
 - Full-fledged snake game with border ui, pregame rules board, and pause menu
-- *insert gif of game before game is started, then started, then paused after a few moments
+
+<p align="center">
+<img src="screenshots_and_gifs/snake_game_screen_features.gif" width="500" />
+</p>
+
 - Game over screen with option to save score
 - Post game screen with option to return to main menu or play again
 
@@ -88,4 +92,3 @@ myself where the current task "location" was. (Also, the "algorithms.txt" file w
 algorithms and sample runs for features that I wanted to implement, but I ended up just using my notebook and 
 "bricks_in_the_wall.txt" to create my project's solutions/algorithms. As a result, "algorithms.txt" never really 
 advanced into something more coherent).
-- *insert screenshot of scrum folder structure and wip_loc
