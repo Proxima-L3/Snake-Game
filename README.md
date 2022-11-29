@@ -63,7 +63,7 @@ feature instead of using videos and/or going through an entire online course bef
 the first place (one of the main purposes of this project).
 - Exercise the practice of making readme files.
 - Learn how to use file I/O reading/writing.
-- Learn how to use adobe xd to make mockups.
+- Learn how to use Adobe XD to make mockups.
 - Learn about licensing and how to find and use external assets.
 - Learn how to modify and create assets in adobe photoshop and illustrator.
 - Exercise the practice of refactoring code.
