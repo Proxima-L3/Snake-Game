@@ -12,7 +12,6 @@ Classes:
 """
 
 import os
-import sys
 import asyncio
 import pygame
 from misc.constants import *
@@ -111,8 +110,7 @@ class RootWindow(object):
                     self.running = False
                 else:
                     pass
-            
+
             await asyncio.sleep(0)
 
         pygame.quit()
-        sys.exit()

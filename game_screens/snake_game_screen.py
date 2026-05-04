@@ -11,7 +11,6 @@ Classes:
 """
 
 import os
-import sys
 import asyncio
 import pygame
 from misc.constants import *
@@ -68,6 +67,7 @@ class SnakeGameScreen(object):
         self.snake_player = PlayerSnake(self.window, SNAKE_PLAYER_START_POS, SNAKE_PLAYER_START_DIRECTION)
         self.apple_list = [AppleSnack(self.window, self.snake_player.snake_cube_rect_list)
                            for _ in range(NUMBER_OF_APPLE_SNACKS)]
+        self.quit_app = False
         self.running = 1
 
     async def run(self) -> None:
@@ -85,8 +85,9 @@ class SnakeGameScreen(object):
 
             for event in event_list:
                 if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.quit_app = True
+                    self.running = 0
+                    break
 
                 # Checks if first game and a key was pressed or if subsequent game and play again button was pressed.
                 elif (event.type == pygame.KEYUP and self.first_game) or self.play_again:
@@ -96,7 +97,8 @@ class SnakeGameScreen(object):
                                       self.grid_bool, self.clock, self.border_ui, self.background, self.bg_pos,
                                       self.grid, self.snake_player, self.apple_list)
                     await snake.run()
-                    if snake.quit_to_main:  # Used if player quit game from pause menu in SnakeGame class.
+                    if snake.quit_app or snake.quit_to_main:
+                        self.quit_app = snake.quit_app
                         self.running = 0
                         break
                     self.sfx_bool, self.music_bool = snake.sfx_bool, snake.music_bool
@@ -104,6 +106,10 @@ class SnakeGameScreen(object):
                     game_over = GameOverScreen(self.window, self.width, self.height, self.sfx_bool, self.music_bool,
                                                self.bg_dimensions, self.bg_pos, self.border_ui.user_score)
                     await game_over.run()
+                    if game_over.quit_app:
+                        self.quit_app = True
+                        self.running = 0
+                        break
                     self.score_saved_bool = game_over.score_saved_bool  # If true, post game screen shows scoreboard.
                     # Creates post/pre game screen and runs.
                     self.border_ui.game_ready_ui = False
@@ -111,6 +117,10 @@ class SnakeGameScreen(object):
                                                       self.sfx_bool, self.score_saved_bool, game_over.user_score,
                                                       game_over.name_input.lower())
                     await post_game_screen.run()
+                    if post_game_screen.quit_app:
+                        self.quit_app = True
+                        self.running = 0
+                        break
                     self.play_again = post_game_screen.play_again
                     # Returns to main menu if user didn't want to play again, otherwise, resets all game objects.
                     if self.play_again is False:
@@ -185,6 +195,7 @@ class SnakeGame(object):
         self.start_time = pygame.time.get_ticks()
         self.total_pause_time = 0
         self.quit_to_main = False
+        self.quit_app = False
         self.running = 1
 
     async def run(self) -> None:
@@ -212,8 +223,9 @@ class SnakeGame(object):
 
             for event in event_list:
                 if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.quit_app = True
+                    self.running = 0
+                    break
                 elif event.type == pygame.KEYDOWN:
                     # Checks if game was paused.
                     if event.key == pygame.K_ESCAPE:

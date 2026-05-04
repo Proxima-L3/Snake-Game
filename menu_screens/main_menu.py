@@ -45,6 +45,7 @@ class MainMenu(object):
         self.title_surface = self.font.render(self.title, True, self.title_color)
         self.title_rect = self.title_surface.get_rect(center=self.title_pos)
         self.menu_music = os.path.join('project_assets', 'music', 'menu_music.ogg')
+        self.quit_app = False
         self.running = True
 
     async def run(self) -> None:
@@ -75,6 +76,7 @@ class MainMenu(object):
 
             for event in event_list:
                 if event.type == pygame.QUIT:
+                    self.quit_app = True
                     self.running = False
                     break
 
@@ -89,6 +91,10 @@ class MainMenu(object):
                         game = SnakeGameScreen(self.window, self.width, self.height, self.sfx_bool, self.music_bool,
                                                self.background)
                         await game.run()
+                        if game.quit_app:
+                            self.quit_app = True
+                            self.running = False
+                            break
                         pygame.display.set_caption(self.caption)
                         pygame.mixer.music.load(self.menu_music)
                         if self.music_bool == 'True':
@@ -99,6 +105,10 @@ class MainMenu(object):
                         high_scores = HighScoresScreen(self.window, self.width, self.height, self.sfx_bool,
                                                        self.background)
                         await high_scores.run()
+                        if high_scores.quit_app:
+                            self.quit_app = True
+                            self.running = False
+                            break
                         pygame.display.set_caption(self.caption)
                     elif game_options_button.is_hovering(mouse_position):
                         game_options_button.draw_clicked(self.sfx_bool)
@@ -106,6 +116,10 @@ class MainMenu(object):
                         game_options = GameOptionsScreen(self.window, self.width, self.height, self.sfx_bool,
                                                          self.music_bool, self.background)
                         await game_options.run()
+                        if game_options.quit_app:
+                            self.quit_app = True
+                            self.running = False
+                            break
                         pygame.display.set_caption(self.caption)
                         self.sfx_bool, self.music_bool, self.background = \
                             update_settings_real_time(self.width, self.height, get_file_dict('user_preferences'))
@@ -113,6 +127,7 @@ class MainMenu(object):
                         pygame.mixer.music.stop()
                         quit_button.draw_clicked(self.sfx_bool)
                         pygame.time.delay(QUIT_BUTTON_CLICK_TIME_DELAY)
+                        self.quit_app = True
                         self.running = False
                         break
                     else:

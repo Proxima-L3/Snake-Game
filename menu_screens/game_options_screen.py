@@ -13,7 +13,6 @@ Classes:
     GameOptionsScreen: Contains game options screen of program.
 """
 
-import sys
 import asyncio
 import pygame
 from misc.constants import *
@@ -223,6 +222,7 @@ class GameOptionsScreen(object):
         self.title_pos = GAME_OPTIONS_TITLE_POS
         self.title_surface = self.title_font.render(self.title, True, self.title_color)
         self.title_rect = self.title_surface.get_rect(center=self.title_pos)
+        self.quit_app = False
         self.running = True
 
     async def run(self) -> None:
@@ -245,8 +245,9 @@ class GameOptionsScreen(object):
 
             for event in event_list:
                 if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.quit_app = True
+                    self.running = False
+                    break
 
                 # Checks if mouse button was clicked.
                 elif event.type == pygame.MOUSEBUTTONUP:

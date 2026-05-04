@@ -9,7 +9,6 @@ Classes:
 """
 
 import os
-import sys
 import asyncio
 import pygame
 from misc.constants import *
@@ -48,6 +47,7 @@ class HighScoresScreen(object):
         self.text_pos = (0, 0)
         self.text_surface = self.font.render(self.text, True, self.text_color)
         self.text_rect = self.text_surface.get_rect(center=self.text_pos)
+        self.quit_app = False
         self.running = True
 
     async def run(self) -> None:
@@ -70,8 +70,9 @@ class HighScoresScreen(object):
 
             for event in event_list:
                 if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.quit_app = True
+                    self.running = False
+                    break
 
                 elif event.type == pygame.MOUSEBUTTONUP:  # Checks if mouse button was clicked.
                     # Checks if cursor was hovering over any buttons when clicked and if so, executes their code.

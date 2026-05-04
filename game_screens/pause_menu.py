@@ -9,7 +9,6 @@ Classes:
 """
 
 import os
-import sys
 import asyncio
 import pygame
 from misc.constants import *
@@ -77,8 +76,9 @@ class PauseMenu(object):
 
             for event in event_list:
                 if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.quit_to_main = True
+                    self.running = False
+                    break
                 elif event.type == pygame.KEYDOWN:
                     # Checks for esc button press (same function as unpause/continue).
                     if event.key == pygame.K_ESCAPE:

@@ -8,7 +8,6 @@ Classes:
 """
 
 import os
-import sys
 import asyncio
 import pygame
 from misc.buttons import TextButton
@@ -64,6 +63,7 @@ class GameOverScreen(object):
         self.text_rect_list = [surface.get_rect(midright=pos)
                                for surface, pos in zip(self.text_surface_list, self.text_pos_list)]
         self.score_saved_bool = False
+        self.quit_app = False
         self.running = True
 
     async def run(self) -> None:
@@ -94,8 +94,9 @@ class GameOverScreen(object):
 
             for event in event_list:
                 if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.quit_app = True
+                    self.running = False
+                    break
 
                 elif event.type == pygame.MOUSEBUTTONUP:  # Checks if mouse button was clicked.
                     # Checks if cursor was hovering over a widget when clicked and if so, executes their code.
