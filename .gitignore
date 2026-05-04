@@ -1,0 +1,67 @@
+.idea/misc.xml
+.idea/modules.xml
+.idea/SnakeGame.iml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/SnakeGame/v15/.suo
+game_objects/__pycache__/__init__.cpython-37.pyc
+game_objects/__pycache__/__init__.cpython-310.pyc
+saved_data_snake/scratch_paper.txt
+game_objects/__pycache__/game_border_ui.cpython-37.pyc
+game_objects/__pycache__/game_border_ui.cpython-310.pyc
+game_objects/__pycache__/game_grid.cpython-37.pyc
+game_objects/__pycache__/game_grid.cpython-310.pyc
+game_objects/__pycache__/pregame_rules_board.cpython-37.pyc
+game_objects/__pycache__/pregame_rules_board.cpython-310.pyc
+game_objects/__pycache__/score_board.cpython-37.pyc
+game_objects/__pycache__/score_board.cpython-310.pyc
+game_objects/__pycache__/snack_items.cpython-37.pyc
+game_objects/__pycache__/snack_items.cpython-310.pyc
+game_objects/__pycache__/snake_player.cpython-37.pyc
+game_objects/__pycache__/snake_player.cpython-310.pyc
+game_screens/__pycache__/__init__.cpython-37.pyc
+game_screens/__pycache__/__init__.cpython-310.pyc
+game_screens/__pycache__/game_over_screen.cpython-37.pyc
+game_screens/__pycache__/game_over_screen.cpython-310.pyc
+game_screens/__pycache__/pause_menu.cpython-37.pyc
+game_screens/__pycache__/pause_menu.cpython-310.pyc
+game_screens/__pycache__/post_game_screen.cpython-37.pyc
+game_screens/__pycache__/post_game_screen.cpython-310.pyc
+game_screens/__pycache__/snake_game_screen.cpython-37.pyc
+game_screens/__pycache__/snake_game_screen.cpython-310.pyc
+menu_screens/__pycache__/__init__.cpython-37.pyc
+menu_screens/__pycache__/__init__.cpython-310.pyc
+menu_screens/__pycache__/game_options_screen.cpython-37.pyc
+menu_screens/__pycache__/game_options_screen.cpython-310.pyc
+menu_screens/__pycache__/high_scores_screen.cpython-37.pyc
+menu_screens/__pycache__/high_scores_screen.cpython-310.pyc
+menu_screens/__pycache__/main_menu.cpython-37.pyc
+menu_screens/__pycache__/main_menu.cpython-310.pyc
+menu_screens/__pycache__/root_window.cpython-37.pyc
+menu_screens/__pycache__/root_window.cpython-310.pyc
+misc/__pycache__/__init__.cpython-37.pyc
+misc/__pycache__/__init__.cpython-310.pyc
+misc/__pycache__/buttons.cpython-37.pyc
+misc/__pycache__/buttons.cpython-310.pyc
+misc/__pycache__/constants.cpython-37.pyc
+misc/__pycache__/constants.cpython-310.pyc
+misc/__pycache__/saved_data_io_functions.cpython-37.pyc
+misc/__pycache__/saved_data_io_functions.cpython-310.pyc
+misc/__pycache__/text_box.cpython-37.pyc
+misc/__pycache__/text_box.cpython-310.pyc
+Snake Game recordings/project_assets_folder_structure_demonstration.mkv
+Snake Game recordings/project_assets_folder_structure_demonstration.mp4
+Snake Game recordings/snake_game_demo.mkv
+Snake Game recordings/snake_game_demo.mp4
+Snake Game recordings/snake_game_screen_features_demonstration.mkv
+Snake Game recordings/snake_game_screen_features_demonstration.mp4
+Snake Game recordings/snake_game_screen_playing_game_demonstration.mkv
+Snake Game recordings/snake_game_screen_playing_game_demonstration.mp4
+z_ignore/pep8_guide_simplified.py
+z_ignore/pep8_guide.py
+z_ignore/scratch_paper.py
+z_ignore/snake_game_demo_vid_thumbnail.png
+z_ignore/snake_game_demo_vid.mp4
