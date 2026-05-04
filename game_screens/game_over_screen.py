@@ -77,7 +77,7 @@ class GameOverScreen(object):
         started. Event loop continuously draws game over screen content to
         screen and checks for button hover and click events.
         """
-        pygame.time.delay(GAME_OVER_SCREEN_TIME_DELAY)
+        await asyncio.sleep(GAME_OVER_SCREEN_TIME_DELAY / 1000)
         if self.sfx_bool == 'True':
             self.game_over_sfx.play()
         pygame.display.set_caption(self.caption)
