@@ -9,6 +9,7 @@ Classes:
 
 import os
 import sys
+import asyncio
 import pygame
 from misc.constants import *
 from game_objects.score_board import ScoreBoard
@@ -67,7 +68,7 @@ class PostGameScreen(object):
         self.score_board = ScoreBoard(self.window, self.user_score, self.user_name) if self.score_saved else None
         self.running = True
 
-    def run(self) -> None:
+    async def run(self) -> None:
         """Run post game screen event loop.
 
         Creates main menu button to return to the main menu, as well as a play
@@ -109,6 +110,7 @@ class PostGameScreen(object):
                         print('nothing was clicked..')
 
             self.draw(mouse_position, main_menu_button, play_again_button)
+            await asyncio.sleep(0)
 
     def draw(self, mouse_pos: tuple, main_menu_button: TextButton, play_again_button: TextButton) -> None:
         # (self, mouse_pos: tuple[int, int], main_menu_button: TextButton, play_again_button: TextButton) -> None:

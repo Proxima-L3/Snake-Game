@@ -10,6 +10,7 @@ Classes:
 
 import os
 import sys
+import asyncio
 import pygame
 from misc.constants import *
 from misc.buttons import ArrowButton, TextButton
@@ -49,7 +50,7 @@ class HighScoresScreen(object):
         self.text_rect = self.text_surface.get_rect(center=self.text_pos)
         self.running = True
 
-    def run(self) -> None:
+    async def run(self) -> None:
         """Run high scores screen event loop.
 
         Creates arrow buttons to move through each page of the scoreboard, as
@@ -95,6 +96,7 @@ class HighScoresScreen(object):
                     pass
 
             self.draw(mouse_position, back_button, prev_button, next_button)
+            await asyncio.sleep(0)
 
     def draw(self, mouse_pos: tuple, button_1: TextButton, button_2: ArrowButton, button_3: ArrowButton,
              ) -> None:

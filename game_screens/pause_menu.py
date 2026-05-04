@@ -10,6 +10,7 @@ Classes:
 
 import os
 import sys
+import asyncio
 import pygame
 from misc.constants import *
 
@@ -58,7 +59,7 @@ class PauseMenu(object):
         self.quit_to_main = False
         self.running = True
 
-    def run(self) -> None:
+    async def run(self) -> None:
         """Run pause menu event loop.
 
         Lowers volume before pause menu event loop is started. Event loop
@@ -120,6 +121,7 @@ class PauseMenu(object):
                     pass
 
             self.draw()
+            await asyncio.sleep(0)
 
     def draw(self) -> None:
         """Blits all pause menu content to screen.

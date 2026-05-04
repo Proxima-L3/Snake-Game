@@ -9,6 +9,7 @@ Classes:
 
 import os
 import sys
+import asyncio
 import pygame
 from misc.buttons import TextButton
 from misc.constants import *
@@ -65,7 +66,7 @@ class GameOverScreen(object):
         self.score_saved_bool = False
         self.running = True
 
-    def run(self) -> None:
+    async def run(self) -> None:
         """Run game over screen event loop.
 
         Creates no thanks button to skip option to input name and save to high
@@ -138,6 +139,7 @@ class GameOverScreen(object):
                     pass
 
             self.draw(mouse_position, no_thanks_button, continue_button, name_input_box)
+            await asyncio.sleep(0)
 
     def draw(self, mouse_pos: tuple, no_thanks_button: TextButton, continue_button: TextButton,
              name_input_box: TextBox) -> None:

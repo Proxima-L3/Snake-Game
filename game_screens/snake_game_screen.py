@@ -12,6 +12,7 @@ Classes:
 
 import os
 import sys
+import asyncio
 import pygame
 from misc.constants import *
 from misc.saved_data_io_functions import get_file_dict
@@ -69,7 +70,7 @@ class SnakeGameScreen(object):
                            for _ in range(NUMBER_OF_APPLE_SNACKS)]
         self.running = 1
 
-    def run(self) -> None:
+    async def run(self) -> None:
         """Run snake game screen event loop.
 
         This method contains an event loop that manages all of the screens in
@@ -94,7 +95,7 @@ class SnakeGameScreen(object):
                     snake = SnakeGame(self.window, self.width, self.height, self.sfx_bool, self.music_bool,
                                       self.grid_bool, self.clock, self.border_ui, self.background, self.bg_pos,
                                       self.grid, self.snake_player, self.apple_list)
-                    snake.run()
+                    await snake.run()
                     if snake.quit_to_main:  # Used if player quit game from pause menu in SnakeGame class.
                         self.running = 0
                         break
@@ -102,14 +103,14 @@ class SnakeGameScreen(object):
                     # Creates game over screen and runs.
                     game_over = GameOverScreen(self.window, self.width, self.height, self.sfx_bool, self.music_bool,
                                                self.bg_dimensions, self.bg_pos, self.border_ui.user_score)
-                    game_over.run()
+                    await game_over.run()
                     self.score_saved_bool = game_over.score_saved_bool  # If true, post game screen shows scoreboard.
                     # Creates post/pre game screen and runs.
                     self.border_ui.game_ready_ui = False
                     post_game_screen = PostGameScreen(self.window, self.border_ui, self.bg_dimensions, self.bg_pos,
                                                       self.sfx_bool, self.score_saved_bool, game_over.user_score,
                                                       game_over.name_input.lower())
-                    post_game_screen.run()
+                    await post_game_screen.run()
                     self.play_again = post_game_screen.play_again
                     # Returns to main menu if user didn't want to play again, otherwise, resets all game objects.
                     if self.play_again is False:
@@ -125,6 +126,7 @@ class SnakeGameScreen(object):
                     pass
 
             self.draw()
+            await asyncio.sleep(0)
 
     def draw(self) -> None:
         """Blit all setup snake game content before game starts.
@@ -185,7 +187,7 @@ class SnakeGame(object):
         self.quit_to_main = False
         self.running = 1
 
-    def run(self) -> None:
+    async def run(self) -> None:
         """Run snake game event loop.
 
         This method starts the game's music and a timer on the top right of
@@ -218,7 +220,7 @@ class SnakeGame(object):
                         # Creates pause menu and runs.
                         pause_menu = PauseMenu(self.window, self.width, self.height, self.sfx_bool, self.music_bool,
                                                self.music_not_begun_yet)
-                        pause_menu.run()
+                        await pause_menu.run()
                         pygame.mixer.music.set_volume(GAME_VOLUME)  # Increase volume of music back to normal.
                         self.total_pause_time += pause_menu.total_time_paused
                         self.sfx_bool, self.music_bool = pause_menu.sfx_bool, pause_menu.music_bool
@@ -247,6 +249,7 @@ class SnakeGame(object):
             self.snack_collision_handling()
 
             self.draw()
+            await asyncio.sleep(0)
 
     def draw(self) -> None:
         """Blit current frame of snake game content.

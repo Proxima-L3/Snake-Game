@@ -13,6 +13,7 @@ Classes:
 
 import os
 import sys
+import asyncio
 import pygame
 from misc.constants import *
 from menu_screens.main_menu import MainMenu
@@ -81,7 +82,7 @@ class RootWindow(object):
         self.background = ''
         self.running = True
 
-    def run(self) -> None:
+    async def run(self) -> None:
         """Run snake program's main event loop.
 
         Retrieves multiple saved user preferences then starts up the main
@@ -106,10 +107,12 @@ class RootWindow(object):
                         self.button_click_sfx.play()
                     main_menu = MainMenu(self.window, self.width, self.height,
                                          self.sfx_bool, self.music_bool, self.background)
-                    main_menu.run()
+                    await main_menu.run()
                     self.running = False
                 else:
                     pass
+            
+            await asyncio.sleep(0)
 
         pygame.quit()
         sys.exit()

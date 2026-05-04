@@ -14,6 +14,7 @@ Classes:
 """
 
 import sys
+import asyncio
 import pygame
 from misc.constants import *
 from misc.buttons import ApplyButton, CutoutArrowButton, TextButton
@@ -224,7 +225,7 @@ class GameOptionsScreen(object):
         self.title_rect = self.title_surface.get_rect(center=self.title_pos)
         self.running = True
 
-    def run(self) -> None:
+    async def run(self) -> None:
         """Run game options screen event loop.
 
         This method creates back button, apply button, and a 
@@ -274,6 +275,7 @@ class GameOptionsScreen(object):
                     pass
 
             self.draw(mouse_position, back_button, apply_button, game_options)
+            await asyncio.sleep(0)
 
     def draw(self, mouse_pos: tuple, button_1: TextButton, button_2: ApplyButton, options: GameOptionsContent,
              ) -> None:

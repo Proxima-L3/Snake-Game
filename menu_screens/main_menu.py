@@ -9,6 +9,7 @@ Classes:
 """
 
 import os
+import asyncio
 import pygame
 from misc.constants import *
 from misc.buttons import TextButton
@@ -46,7 +47,7 @@ class MainMenu(object):
         self.menu_music = os.path.join('project_assets', 'music', 'menu_music.ogg')
         self.running = True
 
-    def run(self) -> None:
+    async def run(self) -> None:
         """Run main menu event loop.
 
         Creates menu buttons (start game, high scores, game options, and
@@ -87,7 +88,7 @@ class MainMenu(object):
                         pygame.time.delay(BUTTON_CLICK_TIME_DELAY)
                         game = SnakeGameScreen(self.window, self.width, self.height, self.sfx_bool, self.music_bool,
                                                self.background)
-                        game.run()
+                        await game.run()
                         pygame.display.set_caption(self.caption)
                         pygame.mixer.music.load(self.menu_music)
                         if self.music_bool == 'True':
@@ -97,14 +98,14 @@ class MainMenu(object):
                         pygame.time.delay(BUTTON_CLICK_TIME_DELAY)
                         high_scores = HighScoresScreen(self.window, self.width, self.height, self.sfx_bool,
                                                        self.background)
-                        high_scores.run()
+                        await high_scores.run()
                         pygame.display.set_caption(self.caption)
                     elif game_options_button.is_hovering(mouse_position):
                         game_options_button.draw_clicked(self.sfx_bool)
                         pygame.time.delay(BUTTON_CLICK_TIME_DELAY)
                         game_options = GameOptionsScreen(self.window, self.width, self.height, self.sfx_bool,
                                                          self.music_bool, self.background)
-                        game_options.run()
+                        await game_options.run()
                         pygame.display.set_caption(self.caption)
                         self.sfx_bool, self.music_bool, self.background = \
                             update_settings_real_time(self.width, self.height, get_file_dict('user_preferences'))
@@ -121,6 +122,7 @@ class MainMenu(object):
                     pass
 
             self.draw(mouse_position, start_game_button, high_scores_button, game_options_button, quit_button)
+            await asyncio.sleep(0)
 
     def draw(self, mouse_pos: tuple, button_1: TextButton, button_2: TextButton, button_3: TextButton,
              button_4: TextButton) -> None:
