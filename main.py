@@ -1,3 +1,11 @@
+# /// script
+# [project]
+# name = "Snake Game"
+# version = "1.0"
+# description = "Classic Snake Game built with Pygame"
+# dependencies = ["pygame"]
+# ///
+
 """Run SnakeGame from program entry point.
 
 This module imports the RootWindow class and calls its .run() method from which
