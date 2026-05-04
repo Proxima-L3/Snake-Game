@@ -155,8 +155,12 @@ class SnakeGame(object):
 
     def __init__(self, window: pygame.Surface, width: int, height: int, sfx_bool: str, music_bool: str, grid_bool: str,
                  clock: pygame.time.Clock, border_ui: GameBorderUI, background: pygame.Surface,
-                 bg_pos: tuple[int, int], grid: GameGrid, snake_player: PlayerSnake, apple_list: list[AppleSnack],
+                 bg_pos: tuple, grid: GameGrid, snake_player: PlayerSnake, apple_list: list,
                  ) -> None:
+        # (self, window: pygame.Surface, width: int, height: int, sfx_bool: str, music_bool: str, grid_bool: str,
+        #          clock: pygame.time.Clock, border_ui: GameBorderUI, background: pygame.Surface,
+        #          bg_pos: tuple[int, int], grid: GameGrid, snake_player: PlayerSnake, apple_list: list[AppleSnack],
+        #          ) -> None:
         self.window = window
         self.width = width
         self.height = height

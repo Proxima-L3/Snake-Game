@@ -48,7 +48,7 @@ def get_file_dict(file_name: str) -> dict:
     return file_dict
 
 
-def get_score_name_list() -> list[list[int, str]]:
+def get_score_name_list() -> list: # list[list[int, str]]:
     """Read high_scores.txt and return sorted list of score, name pairs."""
     with open('saved_data_snake/high_scores.txt', 'r') as score_file:
         clean_line_list = score_file.read().splitlines()
@@ -60,8 +60,10 @@ def get_score_name_list() -> list[list[int, str]]:
     return score_name_list
 
 
-def get_page_of_user_row(score_name_list: list[list[int, str]], user_score: int, user_name: str,
-                         ) -> tuple[list[list[int, int, str]], int]:
+def get_page_of_user_row(score_name_list: list, user_score: int, user_name: str,
+                         ) -> tuple:
+    # (score_name_list: list[list[int, str]], user_score: int, user_name: str,
+                        #  ) -> tuple[list[list[int, int, str]], int]:
     """Return "page" list containing entered user (score, name) pair with ranks included.
 
     Accepts a list of (score, name) pairs, an int (user_score), and a str
@@ -133,7 +135,9 @@ def set_new_user_preferences(new_pref_list: list) -> None:
 
 
 def update_settings_real_time(bg_width: int, bg_height: int, old_user_prefs: dict = None,
-                              ) -> tuple[str, str, pygame.Surface]:
+                              ) -> tuple:
+    # (bg_width: int, bg_height: int, old_user_prefs: dict = None,
+    #                           ) -> tuple[str, str, pygame.Surface]:
     """Check if user preferences have been changed and return necessary data accordingly.
 
     This function establishes all user preferences settings and returns

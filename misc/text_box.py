@@ -22,9 +22,12 @@ class TextBox(object):
     font size. Note: Character limit is 12.
     """
 
-    def __init__(self, window: pygame.Surface, textbox_pos: tuple[int, int], textbox_width: int, textbox_height: int,
-                 textbox_color: tuple[int, int, int], font_size: int, text_color: tuple[int, int, int], text: str = '',
+    def __init__(self, window: pygame.Surface, textbox_pos: tuple, textbox_width: int, textbox_height: int,
+                 textbox_color: tuple, font_size: int, text_color: tuple, text: str = '',
                  ) -> None:
+        # (self, window: pygame.Surface, textbox_pos: tuple[int, int], textbox_width: int, textbox_height: int,
+        #          textbox_color: tuple[int, int, int], font_size: int, text_color: tuple[int, int, int], text: str = '',
+        #          ) -> None:
         self.window = window
         self.textbox_pos = textbox_pos
         self.textbox_width = textbox_width
@@ -50,7 +53,8 @@ class TextBox(object):
         self.hovered = False
         self.selected = True
 
-    def draw(self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
+    def draw(self, mouse_pos: tuple, sfx_bool: str) -> None:
+        # (self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
         """Blit text box and text to screen.
 
         Uses class attributes and entered args to blit the text box, any
@@ -66,12 +70,14 @@ class TextBox(object):
         self.draw_textbox(mouse_pos, sfx_bool)
         self.window.blit(self.text_surface, self.text_rect)
 
-    def is_hovering(self, mouse_pos: tuple[int, int]) -> bool:
+    def is_hovering(self, mouse_pos: tuple) -> bool:
+        # (self, mouse_pos: tuple[int, int]) -> bool:
         """Check if mouse is hovering over text box."""
         if self.textbox_rect.collidepoint(mouse_pos):
             return True
 
-    def draw_textbox(self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
+    def draw_textbox(self, mouse_pos: tuple, sfx_bool: str) -> None:
+        # (self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
         """Determine if highlighted and blit text box and highlight to screen.
 
         This method uses class attributes and entered args to determine if

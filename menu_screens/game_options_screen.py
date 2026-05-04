@@ -47,7 +47,7 @@ class GameOptionRow(object):
         self.left_button_exists = False
         self.right_button_exists = False
 
-    def draw(self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
+    def draw(self, mouse_pos: tuple, sfx_bool: str) -> None: # (self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
         """Blit all GameOptionRow content to screen.
 
         Uses class attributes and entered args to blit the GameOptionRow's 
@@ -123,7 +123,7 @@ class GameOptionsContent(object):
         self.y_pos += 45
         return self.y_pos
 
-    def make_new_user_preferences_list(self) -> list[str]:
+    def make_new_user_preferences_list(self) -> list: # -> list[str]:
         """Return list of strings containing each label and selected option.
 
         Creates a new list of f-strings, each representing one line of the
@@ -141,7 +141,7 @@ class GameOptionsContent(object):
 
         return new_pref_list
 
-    def arrows_is_hovering(self, mouse_pos: tuple[int, int]) -> bool:
+    def arrows_is_hovering(self, mouse_pos: tuple) -> bool: # (self, mouse_pos: tuple[int, int]) -> bool:
         """Return bool indicating whether any arrows are being hovered over.
 
         This function iterates through the list of GameOptionRow objects and
@@ -156,7 +156,7 @@ class GameOptionsContent(object):
                     break
         return is_hovering
 
-    def arrows_draw_clicked(self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
+    def arrows_draw_clicked(self, mouse_pos: tuple, sfx_bool: str) -> None: # (self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
         """Check if any arrow buttons were clicked and draws them.
 
         Iterates through option row object list and draws the clicked version
@@ -184,7 +184,7 @@ class GameOptionsContent(object):
             else:
                 pass
 
-    def draw(self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
+    def draw(self, mouse_pos: tuple, sfx_bool: str) -> None: # (self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
         """Call draw method for each game option row in list of rows."""
         for row_object in self.list_of_rows:
             row_object.draw(mouse_pos, sfx_bool)
@@ -275,8 +275,10 @@ class GameOptionsScreen(object):
 
             self.draw(mouse_position, back_button, apply_button, game_options)
 
-    def draw(self, mouse_pos: tuple[int, int], button_1: TextButton, button_2: ApplyButton, options: GameOptionsContent,
+    def draw(self, mouse_pos: tuple, button_1: TextButton, button_2: ApplyButton, options: GameOptionsContent,
              ) -> None:
+        # (self, mouse_pos: tuple[int, int], button_1: TextButton, button_2: ApplyButton, options: GameOptionsContent,
+        #      ) -> None:
         """Blit all GameOptionsScreen content to screen.
 
         Uses class attributes and entered args to blit a background, all game

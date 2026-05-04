@@ -96,8 +96,10 @@ class HighScoresScreen(object):
 
             self.draw(mouse_position, back_button, prev_button, next_button)
 
-    def draw(self, mouse_pos: tuple[int, int], button_1: TextButton, button_2: ArrowButton, button_3: ArrowButton,
+    def draw(self, mouse_pos: tuple, button_1: TextButton, button_2: ArrowButton, button_3: ArrowButton,
              ) -> None:
+        # (self, mouse_pos: tuple[int, int], button_1: TextButton, button_2: ArrowButton, button_3: ArrowButton,
+        #      ) -> None:
         """Blit all HighScoresScreen content to screen.
 
         Uses class attributes, internal methods, and entered args to blit the 

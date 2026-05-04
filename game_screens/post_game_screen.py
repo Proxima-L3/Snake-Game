@@ -110,7 +110,8 @@ class PostGameScreen(object):
 
             self.draw(mouse_position, main_menu_button, play_again_button)
 
-    def draw(self, mouse_pos: tuple[int, int], main_menu_button: TextButton, play_again_button: TextButton) -> None:
+    def draw(self, mouse_pos: tuple, main_menu_button: TextButton, play_again_button: TextButton) -> None:
+        # (self, mouse_pos: tuple[int, int], main_menu_button: TextButton, play_again_button: TextButton) -> None:
         """Blit all PostGameScreen content to screen.
 
         Uses class attributes and entered args to blit the background, the

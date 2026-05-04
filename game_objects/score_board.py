@@ -79,7 +79,7 @@ class ScoreBoard(object):
         for surface, rect in zip(self.user_row_surface_list, self.user_row_rect_list):
             self.window.blit(surface, rect)
 
-    def set_column_surface_rect_lists(self) -> (list[tuple[int, int]], list[pygame.Surface], list[pygame.Rect]):
+    def set_column_surface_rect_lists(self) -> (list, list, list): # (list[tuple[int, int]], list[pygame.Surface], list[pygame.Rect]):
         """Create and return lists for page data pos, surfaces, and rects.
 
         This method acts like a constructor that is called when a ScoreBoard
@@ -106,7 +106,7 @@ class ScoreBoard(object):
 
         return pos_list, surface_list, rect_list
 
-    def set_user_row_surface_rect_lists(self) -> (pygame.Rect, list[pygame.Surface], list[pygame.Rect]):
+    def set_user_row_surface_rect_lists(self) -> (pygame.Rect, list, list): # (pygame.Rect, list[pygame.Surface], list[pygame.Rect]):
         """Return a highlight rect and lists of surfaces and rects for user's row.
 
         This method acts like a constructor that is called when a ScoreBoard

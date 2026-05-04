@@ -29,7 +29,9 @@ class GameOverScreen(object):
     """
 
     def __init__(self, window: pygame.Surface, width: int, height: int, sfx_bool: str, music_bool: str,
-                 bg_dimensions: tuple[int, int], bg_pos: tuple[int, int], user_score: int) -> None:
+                 bg_dimensions: tuple, bg_pos: tuple, user_score: int) -> None:
+        # (self, window: pygame.Surface, width: int, height: int, sfx_bool: str, music_bool: str,
+        #          bg_dimensions: tuple[int, int], bg_pos: tuple[int, int], user_score: int) -> None:
         self.window = window
         self.width = width
         self.height = height
@@ -137,8 +139,10 @@ class GameOverScreen(object):
 
             self.draw(mouse_position, no_thanks_button, continue_button, name_input_box)
 
-    def draw(self, mouse_pos: tuple[int, int], no_thanks_button: TextButton, continue_button: TextButton,
+    def draw(self, mouse_pos: tuple, no_thanks_button: TextButton, continue_button: TextButton,
              name_input_box: TextBox) -> None:
+        # (self, mouse_pos: tuple[int, int], no_thanks_button: TextButton, continue_button: TextButton,
+        #      name_input_box: TextBox) -> None:
         """Blit all GameOverScreen content to screen.
 
         Uses class attributes and entered args to blit the background, the

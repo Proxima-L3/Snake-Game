@@ -122,8 +122,10 @@ class MainMenu(object):
 
             self.draw(mouse_position, start_game_button, high_scores_button, game_options_button, quit_button)
 
-    def draw(self, mouse_pos: tuple[int, int], button_1: TextButton, button_2: TextButton, button_3: TextButton,
+    def draw(self, mouse_pos: tuple, button_1: TextButton, button_2: TextButton, button_3: TextButton,
              button_4: TextButton) -> None:
+        # (self, mouse_pos: tuple[int, int], button_1: TextButton, button_2: TextButton, button_3: TextButton,
+        #      button_4: TextButton) -> None:
         """Blit all MainMenu content to screen.
 
         Uses class attributes and entered args to blit a background, the snake

@@ -29,7 +29,8 @@ class Button:
     and a button hover sfx.
     """
 
-    def __init__(self, window: pygame.Surface, pos: tuple[int, int], width: int, height: int) -> None:
+    def __init__(self, window: pygame.Surface, pos: tuple, width: int, height: int) -> None:
+        # (self, window: pygame.Surface, pos: tuple[int, int], width: int, height: int) -> None:
         self.window = window
         self.pos = pos
         self.width = width
@@ -49,8 +50,10 @@ class TextButton(Button):
     button classes.
     """
 
-    def __init__(self, window: pygame.Surface, pos: tuple[int, int], width: int, height: int, text: str,
+    def __init__(self, window: pygame.Surface, pos: tuple, width: int, height: int, text: str,
                  font_size: int, start_sfx: str = '') -> None:
+        # (self, window: pygame.Surface, pos: tuple[int, int], width: int, height: int, text: str,
+        #          font_size: int, start_sfx: str = '') -> None:
         Button.__init__(self, window, pos, width, height)
         self.text = text
         self.font_size = font_size
@@ -70,8 +73,9 @@ class TextButton(Button):
             os.path.join('project_assets', 'buttons', 'stoneButtonPressed.png'))), (self.width, self.height))
         self.button_rect = self.button_image.get_rect(center=self.pos)
 
-    def is_hovering(self, mouse_pos: tuple[int, int]) -> bool:
+    def is_hovering(self, mouse_pos: tuple) -> bool:
         """Return True if mouse is hovering over button."""
+        # (self, mouse_pos: tuple[int, int]) -> bool:
         if mouse_pos[0] in range(self.button_rect.left, self.button_rect.right) and \
                 mouse_pos[1] in range(self.button_rect.top, self.button_rect.bottom):
             return True
@@ -93,7 +97,8 @@ class TextButton(Button):
         if sfx_bool == 'True':
             self.button_click_sfx.play()
 
-    def draw(self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
+    def draw(self, mouse_pos: tuple, sfx_bool: str) -> None:
+        # (self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
         """Blit normal or hovered button image to screen accordingly.
 
         This method checks if the mouse is hovering over the button or not and
@@ -129,8 +134,10 @@ class ApplyButton(TextButton):
     (only activated if sfx_bool is true), ...
     """
 
-    def __init__(self, window: pygame.Surface, pos: tuple[int, int], width: int, height: int, text: str, font_size: int,
+    def __init__(self, window: pygame.Surface, pos: tuple, width: int, height: int, text: str, font_size: int,
                  ) -> None:
+        # (self, window: pygame.Surface, pos: tuple[int, int], width: int, height: int, text: str, font_size: int,
+        #          ) -> None:
         super().__init__(window, pos, width, height, text, font_size)
         self.button_click_sfx = pygame.mixer.Sound(os.path.join('project_assets', 'sfx', 'button_apply_changes.wav'))
 
@@ -153,7 +160,8 @@ class ArrowButton(Button):
     the arrow button (normal, hover, and clicked)
     """
 
-    def __init__(self, window: pygame.Surface, pos: tuple[int, int], width: int, height: int, direction: str) -> None:
+    def __init__(self, window: pygame.Surface, pos: tuple, width: int, height: int, direction: str) -> None:
+        # (self, window: pygame.Surface, pos: tuple[int, int], width: int, height: int, direction: str) -> None:
         Button.__init__(self, window, pos, width, height)
         self.direction = direction
         self.button_click_direction_sfx = pygame.mixer.Sound(
@@ -175,7 +183,8 @@ class ArrowButton(Button):
                          ))), (self.width, self.height))
         self.arrow_rect = self.arrow_image.get_rect(center=self.pos)
 
-    def is_hovering(self, mouse_pos: tuple[int, int]) -> bool:
+    def is_hovering(self, mouse_pos: tuple) -> bool:
+        # (self, mouse_pos: tuple[int, int]) -> bool:
         """Return True if mouse is hovering over button."""
         if mouse_pos[0] in range(self.arrow_rect.left, self.arrow_rect.right) and \
                 mouse_pos[1] in range(self.arrow_rect.top, self.arrow_rect.bottom):
@@ -188,7 +197,8 @@ class ArrowButton(Button):
         if sfx_bool == 'True':
             self.button_click_direction_sfx.play()
 
-    def draw(self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
+    def draw(self, mouse_pos: tuple, sfx_bool: str) -> None:
+        # (self, mouse_pos: tuple[int, int], sfx_bool: str) -> None:
         """Blit normal or hovered button image to screen accordingly.
 
         This method checks if the mouse is hovering over the button or not and
@@ -222,7 +232,8 @@ class CutoutArrowButton(ArrowButton):
     method for updating pos of button on screen if so desired.
     """
 
-    def __init__(self, window: pygame.Surface, pos: tuple[int, int], width: int, height: int, direction: str) -> None:
+    def __init__(self, window: pygame.Surface, pos: tuple, width: int, height: int, direction: str) -> None:
+        # (self, window: pygame.Surface, pos: tuple[int, int], width: int, height: int, direction: str) -> None:
         super().__init__(window, pos, width, height, direction)
         self.arrow_image = pygame.transform.scale(pygame.Surface.convert_alpha(pygame.image.load(
             os.path.join('project_assets',
@@ -240,7 +251,7 @@ class CutoutArrowButton(ArrowButton):
                          f'ArrowButtonCutoutPressed{self.direction.capitalize()}.png',
                          ))), (self.width, self.height))
 
-    def update_button_pos(self, pos: tuple[int, int]) -> None:
+    def update_button_pos(self, pos: tuple) -> None:
         """Update position of button."""
         self.pos = pos
         self.arrow_rect = self.arrow_image.get_rect(midleft=self.pos)

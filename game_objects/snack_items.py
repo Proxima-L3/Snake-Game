@@ -26,14 +26,15 @@ class Item(object):
     to blit item to.
     """
 
-    def __init__(self, window: pygame.Surface, item_rect_list: list[pygame.Rect]) -> None:
+    def __init__(self, window: pygame.Surface, item_rect_list: list) -> None:
+        # (self, window: pygame.Surface, item_rect_list: list[pygame.Rect]) -> None:
         self.window = window
         self.item_rect_list = item_rect_list
         self.x = 0
         self.y = 0
         self.pos = self.random_pos()
 
-    def random_pos(self) -> tuple[int, int]:
+    def random_pos(self) -> tuple: # tuple[int, int]:
         """Return a random (x, y) coordinate tuple.
 
         Uses the item_rect_list attribute to find an (x, y) coordinate not
@@ -65,7 +66,8 @@ class AppleSnack(Item):
     eaten by snake.
     """
 
-    def __init__(self, window: pygame.Surface, item_rect_list: list[pygame.Rect]) -> None:
+    def __init__(self, window: pygame.Surface, item_rect_list: list) -> None:
+        # (self, window: pygame.Surface, item_rect_list: list[pygame.Rect]) -> None:
         super().__init__(window, item_rect_list)
         self.width = ITEM_APPLE_SNACK_WIDTH
         self.height = ITEM_APPLE_SNACK_HEIGHT

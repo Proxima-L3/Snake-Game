@@ -27,7 +27,8 @@ class PlayerSnake(object):
     the start of the game), etc.
     """
 
-    def __init__(self, window: pygame.Surface, head_pos: tuple[int, int], direction: str) -> None:
+    def __init__(self, window: pygame.Surface, head_pos: tuple, direction: str) -> None:
+        # (self, window: pygame.Surface, head_pos: tuple[int, int], direction: str) -> None:
         self.window = window
         self.head_pos = head_pos
         self.direction = direction
@@ -136,7 +137,8 @@ class PlayerSnake(object):
         body length attribute is set back to 1, and the dead attribute boolean
         is set back to False.
         """
-        self.head_pos = START_BUTTON_TEXT
+        
+        self.head_pos = SNAKE_PLAYER_START_POS
         self.direction = SNAKE_PLAYER_START_DIRECTION
         self.head_cube = pygame.transform.scale(pygame.Surface.convert_alpha(pygame.image.load(
             os.path.join('project_assets', 'snake_skins', f'{self.snake_skin}head_{self.direction}.png'))),
