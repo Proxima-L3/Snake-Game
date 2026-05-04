@@ -22,5 +22,4 @@ async def main() -> None:
     await snake.run()
 
 
-if __name__ == '__main__':
-    asyncio.run(main())
+asyncio.run(main())
