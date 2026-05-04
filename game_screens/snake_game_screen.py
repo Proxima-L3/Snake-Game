@@ -210,10 +210,9 @@ class SnakeGame(object):
         code), and then finally draws all current game information to screen.
         """
         pygame.display.set_caption(self.caption)
-        pygame.mixer.music.load(self.game_music_intro)
-        pygame.mixer.music.queue(self.game_music, loops=-1)
+        pygame.mixer.music.load(self.game_music)
         if self.music_bool == 'True':
-            pygame.mixer.music.play()
+            pygame.mixer.music.play(-1)
         arrow_keys_dict = {pygame.K_UP: 'up', pygame.K_RIGHT: 'right', pygame.K_DOWN: 'down', pygame.K_LEFT: 'left'}
 
         while self.running:
@@ -241,7 +240,6 @@ class SnakeGame(object):
                         # Returns to main menu immediately if player pressed quit in pause menu.
                         if pause_menu.quit_to_main:
                             pygame.mixer.music.stop()
-                            pygame.mixer.music.unload()
                             self.running = 0
                             break
                         pygame.display.set_caption(self.caption)
@@ -293,7 +291,6 @@ class SnakeGame(object):
                        (self.snake_player.snake_cube_rect_list[1:] + self.border_ui.border_image_rect_list))):
             self.snake_player.die()
             pygame.mixer.music.stop()
-            pygame.mixer.music.unload()
             if self.sfx_bool == 'True':
                 self.snake_crashes_sfx.play()
             self.running = 0

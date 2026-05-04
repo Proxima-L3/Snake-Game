@@ -135,7 +135,7 @@ def set_new_user_preferences(new_pref_list: list) -> None:
 
 
 def update_settings_real_time(bg_width: int, bg_height: int, old_user_prefs: dict = None,
-                              ) -> tuple:
+                              skip_music: bool = False) -> tuple:
     # (bg_width: int, bg_height: int, old_user_prefs: dict = None,
     #                           ) -> tuple[str, str, pygame.Surface]:
     """Check if user preferences have been changed and return necessary data accordingly.
@@ -165,20 +165,15 @@ def update_settings_real_time(bg_width: int, bg_height: int, old_user_prefs: dic
     old_music_setting = None if old_user_prefs is None else old_user_prefs.get('MUSIC').split('~')[1]
     music_setting = user_prefs.get('MUSIC').split('~')[1]
 
-    if old_user_prefs is None:  # Checks if no user_pref dict is entered (during initial game boot up).
-        if music_setting == 'True':
+    if not skip_music:
+        if old_user_prefs is None:  # Checks if no user_pref dict is entered (during initial game boot up).
+            if music_setting == 'True':
+                pygame.mixer.music.play(-1)
+        # If old music setting is false and new music setting is true, play music from start.
+        elif old_music_setting != music_setting == 'True':
             pygame.mixer.music.play(-1)
-        else:
-            pass
-    # If old music setting is false and new music setting is true, play music from start.
-    elif old_music_setting != music_setting == 'True':
-        pygame.mixer.music.play(-1)
-    # If old music setting is true and new music setting is false, stop music.
-    elif old_music_setting != music_setting == 'False':
-        pygame.mixer.music.stop()
-    # If old and new music settings are both false or both true do nothing (this prevents the music from restarting or
-    # running the unnecessary stop music method if the setting wasn't changed).
-    else:
-        pass
+        # If old music setting is true and new music setting is false, stop music.
+        elif old_music_setting != music_setting == 'False':
+            pygame.mixer.music.stop()
 
     return sfx_bool, music_setting, background

@@ -86,7 +86,6 @@ class MainMenu(object):
                     if start_game_button.is_hovering(mouse_position):
                         start_game_button.draw_clicked(self.sfx_bool)
                         pygame.mixer.music.stop()
-                        pygame.mixer.music.unload()
                         pygame.time.delay(BUTTON_CLICK_TIME_DELAY)
                         game = SnakeGameScreen(self.window, self.width, self.height, self.sfx_bool, self.music_bool,
                                                self.background)

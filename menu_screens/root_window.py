@@ -90,8 +90,8 @@ class RootWindow(object):
         and its run method is called.
         """
         pygame.display.set_caption(self.caption)
-        pygame.mixer.music.load(self.menu_music)
-        self.sfx_bool, self.music_bool, self.background = update_settings_real_time(self.width, self.height)
+        self.sfx_bool, self.music_bool, self.background = update_settings_real_time(self.width, self.height,
+                                                                                     skip_music=True)
         greeting_screen = SplashScreen(self.window, self.width, self.height)
 
         while self.running:
@@ -104,6 +104,9 @@ class RootWindow(object):
                 elif event.type == pygame.KEYUP or event.type == pygame.MOUSEBUTTONUP:
                     if self.sfx_bool == 'True':
                         self.button_click_sfx.play()
+                    pygame.mixer.music.load(self.menu_music)
+                    if self.music_bool == 'True':
+                        pygame.mixer.music.play(-1)
                     main_menu = MainMenu(self.window, self.width, self.height,
                                          self.sfx_bool, self.music_bool, self.background)
                     await main_menu.run()
