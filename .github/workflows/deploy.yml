@@ -26,10 +26,10 @@ jobs:
           python-version: '3.11'
 
       - name: Install Pygbag
-        run: pip install pygbag==0.8.6
+        run: pip install pygbag
 
       - name: Build with Pygbag
-        run: pygbag --build --width 800 --height 500 .
+        run: pygbag --build --width 800 --height 500 --disable-sound-format-error .
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
